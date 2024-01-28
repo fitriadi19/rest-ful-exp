@@ -1,0 +1,21 @@
+version: "3"
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: PmktOFeddQjw3b9nN5TuNybeT4vRsIFG
+    #      MYSQL_DATABASE: my-db
+    #      MYSQL_USER: my-user
+    #      MYSQL_PASSWORD: my-secret-pw
+    command: --init-file /data/application/init.sql
+    volumes:
+      - $DOCKER_VOLUMES/mysql/var/lib/mysql:/var/lib/mysql
+      - ./mysql_init.sql:/data/application/init.sql
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+
