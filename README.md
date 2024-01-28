@@ -6,6 +6,7 @@ File: rest-ful-exp.postman_collection.json
 ## Docker compose
 File: docker-compose.yml
 
+Install: sudo apt install docker-compose
 Command: sudo docker-compose up -d
 
 ## Permanent set up of the environmental variable
